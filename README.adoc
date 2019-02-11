@@ -10,6 +10,10 @@ I didn't change the original content of the document, all credit goes to Greg. T
 
 Pick your preferred format from the https://github.com/keyvanakbary/cqrs-documents/releases/latest[latest release page].
 
+== View in Web Format
+
+https://cqrs-documents.surge.sh
+
 == Generate the ebook
 
 ----

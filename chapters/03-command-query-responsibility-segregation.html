@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.10" />
+<title></title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  white-space: pre-wrap;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; vertical-align: text-bottom; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_command_and_query_responsibility_segregation">Command and Query Responsibility Segregation</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>This chapter will introduce the concept of Command and Query Responsibility Segregation. It will look at how the separation of roles in the system can lead towards a much more effective architecture. It will also analyze some of the different architectural properties that exist in systems where CQRS has been applied.</p></div>
+<div class="sect2">
+<h3 id="_origins">Origins</h3>
+<div class="paragraph"><p>Command and Query Responsibility Segregation (CQRS) originated with Bertrand Meyer’s Command and Query Separation Principle. Wikipedia defines the principle as:</p></div>
+<div class="paragraph"><p>"It states that every method should either be a command that performs an action, or a query that returns data to the caller, but not both. In other words, asking a question should not change the answer. More formally, methods should return a value only if they are referentially transparent and hence possess no side effects."&#8201;&#8212;&#8201;Wikipedia</p></div>
+<div class="paragraph"><p>Basically it boils down to. If you have a return value you cannot mutate state. If you mutate state your return type must be void. There can be some issues with this. Martin Fowler shows one example on the bliki with:</p></div>
+<div class="paragraph"><p>"Meyer likes to use command-query separation absolutely, but there are exceptions. Popping a stack is a good example of a modifier that modifies state. Meyer correctly says that you can avoid having this method, but it is a useful idiom. So I prefer to follow this principle when I can, but I&#8217;m prepared to break it to get my pop."&#8201;&#8212;&#8201;Martin Fowler</p></div>
+<div class="paragraph"><p>Command and Query Responsibility Segregation was originally considered just to be an extension of this concept. For a long time it was discussed simply as CQS at a higher level. Eventually after much confusion between the two concepts it was correctly deemed to be a different pattern.</p></div>
+<div class="paragraph"><p>Command and Query Responsibility Segregation uses the same definition of Commands and Queries that Meyer used and maintains the viewpoint that they should be pure. The fundamental difference is that in CQRS objects are split into two objects, one containing the Commands one containing the Queries.</p></div>
+<div class="paragraph"><p>The pattern although not very interesting in and of itself becomes extremely interesting when viewed from an architectural point of view.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="images/stereotypical-architecture-2.png" alt="images/stereotypical-architecture-2.png" />
+</div>
+<div class="title">Figure 1. Stereotypical Architecture</div>
+</div>
+<div class="paragraph"><p>Figure 1 contains the stereotypical architecture discussed in the first chapter. One key aspect of the architecture is that the service handles both commands and queries. More often than not the domain is also being used for both commands and queries. The application of CQRS to this architecture although quite simple in definition will drastically change architectural opportunities. A simple service to transform is in Listing 1.</p></div>
+<div class="listingblock">
+<div class="title">Listing 1. Original Customer Service</div>
+<div class="content">
+<pre><code>CustomerService
+void MakeCustomerPreferred(CustomerId)
+Customer GetCustomer(CustomerId)
+CustomerSet GetCustomersWithName(Name)
+CustomerSet GetPreferredCustomers()
+void ChangeCustomerLocale(CustomerId, NewLocale)
+void CreateCustomer(Customer)
+void EditCustomerDetails(CustomerDetails)</code></pre>
+</div></div>
+<div class="paragraph"><p>Applying CQRS on the CustomerService would result in two services as shown in Listing 2.</p></div>
+<div class="listingblock">
+<div class="title">Listing 2. Customer Service after CQRS</div>
+<div class="content">
+<pre><code>CustomerWriteService
+void MakeCustomerPreferred(CustomerId)
+void ChangeCustomerLocale(CustomerId, NewLocale)
+void CreateCustomer(Customer)
+void EditCustomerDetails(CustomerDetails)
+
+CustomerReadService
+Customer GetCustomer(CustomerId)
+CustomerSet GetCustomersWithName(Name)
+CustomerSet GetPreferredCustomers()</code></pre>
+</div></div>
+<div class="paragraph"><p>While a relatively simple process, this will solve many of the problems that existed in the stereotypical architecture. The service has been split into two separate services, a read side and a write side or the Command side and the Query side.</p></div>
+<div class="paragraph"><p>This separation enforces the notion that the Command side and the Query side have very different needs. The architectural properties associated with use cases on each side are tend to be quite different. Just to name a few:</p></div>
+<div class="sect3">
+<h4 id="_consistency">Consistency</h4>
+<div class="paragraph"><p><strong>Command:</strong> It is far easier to process transactions with consistent data than to handle all of the edge cases that eventual consistency can bring into play.</p></div>
+<div class="paragraph"><p><strong>Query:</strong> Most systems can be eventually consistent on the Query side.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_data_storage">Data Storage</h4>
+<div class="paragraph"><p><strong>Command:</strong> The Command side being a transaction processor in a relational structure would want to store data in a normalized way, probably near 3rd Normal Form (3NF)</p></div>
+<div class="paragraph"><p><strong>Query:</strong> The Query side would want data in a denormalized way to minimize the number of joins needed to get a given set of data. In a relational structure likely in 1st Normal Form (1NF)</p></div>
+</div>
+<div class="sect3">
+<h4 id="_scalability">Scalability</h4>
+<div class="paragraph"><p><strong>Command:</strong> In most systems, especially web systems, the Command side generally processes a very small number of transactions as a percentage of the whole. Scalability therefore is not always important.</p></div>
+<div class="paragraph"><p><strong>Query:</strong> In most systems, especially web systems, the Query side generally processes a very large number of transactions as a percentage of the whole (often times 2 or more orders of magnitude). Scalabilityis most often needed for the query side.</p></div>
+<div class="paragraph"><p><strong>It is not possible to create an optimal solution for searching, reporting, and processing transactions utilizing a single model.</strong></p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_query_side">The Query Side</h3>
+<div class="paragraph"><p>As stated, the Query side will only contain the methods for getting data. From the original architecture these would be all of the methods that return DTOs that the client consumes to show on the screen.</p></div>
+<div class="paragraph"><p>In the original architecture the building of DTOs was handled by projecting off of domain objects. This process can lead to a lot of pain. A large source of the pain is that the DTOs are a different model than the domain and as such require a mapping.</p></div>
+<div class="paragraph"><p>DTOs are optimally built to match the screens of the client to prevent multiple round trips with the server. In cases with many clients it may be better to build a canonical model that all of the clients use.</p></div>
+<div class="paragraph"><p>In either case the DTO model is very different than the domain model that was built in order to represent and process transactions.</p></div>
+<div class="paragraph"><p>Common smells of the problems can be found in many domains:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Large numbers of read methods on repositories often also including paging or sorting information.
+</p>
+</li>
+<li>
+<p>
+Getters exposing the internal state of domain objects in order to build DTOs.
+</p>
+</li>
+<li>
+<p>
+Use of prefetch paths on the read use cases as they require more data to be loaded by the ORM.
+</p>
+</li>
+<li>
+<p>
+Loading of multiple aggregate roots to build a DTO causes non-optimal querying to the data model.
+</p>
+</li>
+<li>
+<p>
+Alternatively aggregate boundaries can be confused because of the DTO building operations.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>The largest smell though is that the optimization of queries is extremely difficult. Because queries are operating on an object model then being translated to a data model, likely by an ORM it can become difficult to optimize these queries. A developer needs to have intimate knowledge of the ORM and the database. The developer is dealing with a problem of Impedance Mismatch (for more discussion see “Events as a Storage Mechanism”).</p></div>
+<div class="paragraph"><p>After CQRS has been applied there is a natural boundary. Separate paths have been made explicit. It makes a lot of sense now to <strong>not</strong> use the domain to project DTOs. Instead it is possible to introduce a new way of projecting DTOs. Figure 2</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="images/the-query-side.png" alt="images/the-query-side.png" />
+</div>
+<div class="title">Figure 2. The Query Side</div>
+</div>
+<div class="paragraph"><p>The domain has been bypassed. There is now a new concept called a “Thin Read Layer”. This layer reads directly from the database and projects DTOs. There are many ways that this can be done with handwritten ADO.NET and mapping code and a full blown ORM on the high end. Which choice is right for a team depends largely on the team itself and what they are most comfortable with. Likely the best solution is something in the middle as much of what an ORM provides is not needed and large amounts of time will be lost manually creating mapping code. A possible solution would be to use a small convention based mapping utility.</p></div>
+<div class="paragraph"><p>The Thin Read Layer need not be isolated from the database, it is not necessarily a bad thing to be tied to a database vendor from the read layer. It is also not necessarily bad to use stored procedures for reading, it again depends on the team and the non-functional requirements of the system.</p></div>
+<div class="paragraph"><p>The Thin Read Layer is not a complex piece of code although it can be tedious to maintain. One benefit of the separate read layer is that it will not suffer from an impedance mismatch. It is connected directly to the data model, this can make queries much easier to optimize. Developers working on the Query side of the system also do not need to understand the domain model nor whatever ORM tool is being used. At the simplest level they would need to understand only the data model.</p></div>
+<div class="paragraph"><p>The separation of the Thin Read Layer and the bypassing of the domain for reads allows also for the specialization of the domain.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_the_command_side">The Command Side</h3>
+<div class="paragraph"><p>Overall the Command side remains very similar to the “Stereotypical Architecture”. The illustration in Figure 3 should look nearly identical to the previously discussed architecture. The main differences are that it now has a behavioral as opposed to a data centric contract which was needed in order actually use Domain Driven Design and it has had the reads separated out of it.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="images/the-command-side.png" alt="images/the-command-side.png" />
+</div>
+<div class="title">Figure 3. The Command Side</div>
+</div>
+<div class="paragraph"><p>In the “Stereotypical Architecture” the domain was handling both Commands and Queries, this caused many issues within the domain itself. Some of those issues were:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Large numbers of read methods on repositories often also including paging or sorting information.
+</p>
+</li>
+<li>
+<p>
+Getters exposing the internal state of domain objects in order to build DTOs.
+</p>
+</li>
+<li>
+<p>
+Use of prefetch paths on the read use cases as they require more data to be loaded by the ORM.
+</p>
+</li>
+<li>
+<p>
+Loading of multiple aggregates to build a DTO causes non-optimal querying to the data model.
+</p>
+</li>
+<li>
+<p>
+Alternatively aggregate boundaries can be confused because of the DTO building operations.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Once the read layer has been separated the domain will only focus on the processing of Commands.</p></div>
+<div class="paragraph"><p>These issues also suddenly go away. Domain objects suddenly no longer have a need to expose internal state, repositories have very few if any query methods aside from GetById, and a more behavioral focus can be had on Aggregate boundaries.</p></div>
+<div class="paragraph"><p>This change has been done at a lower or no cost in comparison to the original architecture. In many cases the separation will actually lower costs as the optimization of queries is simpler in the thin read layer than it would be if implemented in the domain model. The architecture also carries lower conceptual overhead when working with the domain model as the querying is separated; this can also lead towards a lower cost. In the worst case, the cost should work out to be equal; all that has really been done is the moving of a responsibility, it is feasible to even have the read side still use the domain.</p></div>
+<div class="paragraph"><p>By applying CQRS the concepts of Reads and Writes have been separated. It really begs the question of whether the two should exist reading the same data model or perhaps they can be treated as if they were two integrated systems, Figure 4 illustrates this concept. There are many well known integration patterns between multiple data sources in order to maintain synchronisity either in a consistent or eventually consistent fashion. The two distinct data sources allow the data models to be optimized to the task at hand. As an example the Read side can be modeled in 1NF and the transactional model could be modeled in 3nf.</p></div>
+<div class="paragraph"><p>The choice of integration model though is very important as translation and synchronization between models can be become a very expensive undertaking. The model that is best suited is the introduction of events, events are a well known integration pattern and offer the best mechanism for model synchronization.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="images/separated-data-models.png" alt="images/separated-data-models.png" />
+</div>
+<div class="title">Figure 4. Separated Data Models with CQRS</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated
+ 2019-02-11 10:48:58 HKT
+</div>
+</div>
+</body>
+</html>

@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 set -o pipefail
-cd ../images
+rm -rf images
+cp -r ../images .
+cd ./images
 echo '<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -13,7 +15,7 @@ echo '<!DOCTYPE html>
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="images.css">
-' > ../build/images.html
-ls | awk '{print "<p><span>"$1"</span><img src=\"images/"$1"\"></p>"}' >> ../build/images.html
+' > ../images.html
+ls | awk '{print "<p><span>"$1"</span><img src=\"images/"$1"\"></p>"}' >> ../images.html
 echo '</body>
-</html>' >> ../build/images.html
+</html>' >> ../images.html
